@@ -1,0 +1,13 @@
+<div>
+    Title :  <input [(ngModel)]="title" > <br>
+    Author : <input [(ngModel)]="author" > <br>
+    CheckoutDate : <input [(ngModel)]="checkoutDate" > <br>
+    <button (click)="addBook()">AddBook</button>
+</div>
+
+<ul>
+    <li *ngFor="let b of books; index as i">
+      {{b.author}}  {{b.title}}  {{b.checkoutDate | date:'dd.MM.yyyy'}}
+      <button (click)="deleteBook(i)">Delete</button>
+    </li>
+</ul>
